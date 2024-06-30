@@ -1,0 +1,179 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: myfont;
+  src: url(spotifyfont.ttf);
+}
+
+body{
+    background-color: black;
+    color: white;
+    display: flex;
+}
+#logoimg,
+#searchimg,
+#homeimg,
+#playlistimg,
+#plusimg,
+#leftimg,
+#rightimg {
+  filter: invert(1);
+}
+
+#left {
+  width: 353px;
+  height: 100%;
+  padding: 8px;
+}
+#right{
+    width: 1143px;
+    height: 40vw;
+    padding: 8px;
+    background-color: #121212;
+    border-radius: 7px;
+    margin-top: 8px;
+}
+
+#box1 {
+  height: 156px;
+  width: 353px;
+  background-color: #121212;
+  color: white;
+  border-radius: 7px;
+}
+
+#logoimg {
+  position: relative;
+  left: 25px;
+  top: 20px;
+}
+
+#homeimg {
+  height: 24px;
+  width: 24px;
+}
+
+#searchimg {
+  height: 24px;
+  width: 24px;
+}
+
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 20px;
+  font-size: 16px;
+  font-family: myfont;
+  font-weight: lighter;
+  position: relative;
+  left: 25px;
+  top: 37px;
+}
+
+#search {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 20px;
+  font-size: 16px;
+  font-family: myfont;
+  font-weight: lighter;
+  position: relative;
+  left: 25px;
+  top: 60px;
+}
+
+#box2 {
+  margin-top: 7px;
+  height: 530px;
+  width: 353px;
+  background-color: #121212;
+  color: white;
+  border-radius: 7px;
+}
+#plusimg {
+  height: 16px;
+  width: 16px;
+  margin-left: 150px;
+}
+#playlistimg {
+  height: 24px;
+  width: 24px;
+  margin-left: 5px;
+}
+#yl {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+  font-size: 16px;
+  font-family: myfont;
+  font-weight: lighter;
+  position: relative;
+  left: 20px;
+  top: 18px;
+}
+#lincs a {
+  width: 353px;
+  font-size: 10px;
+  font-family: myfont;
+  position: relative;
+  left: 20px;
+  top: 18px;
+  color: grey;
+  text-decoration: none;
+}
+#hasallinks {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  top: 350px;
+}
+#ads {
+  position: relative;
+  right: 315px;
+  top: 25px;
+}
+#access {
+  position: relative;
+  right: 307px;
+  top: 25px;
+}
+#btn{
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
+#leftimg,
+#rightimg {
+    height: 16px;
+    width: 16px;
+}
+#rightbtn{
+    height: 32px;
+    width: 32px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: relative;
+    left: 40px;
+    bottom: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#leftbtn{
+    height: 32px;
+    width: 32px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
