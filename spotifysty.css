@@ -303,7 +303,8 @@ body {
   transition: all 0.3s ease-out;
 }
 #pritam:hover{
-  background-color: #3b3b3b;
+  background-image: linear-gradient(#1e1e1e, #191919);
+  border-radius: 7px;
   #priplay{
     opacity: 1;
     bottom: 75px;
