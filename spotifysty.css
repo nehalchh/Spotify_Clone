@@ -8,10 +8,10 @@
   src: url(spotifyfont.ttf);
 }
 
-body{
-    background-color: black;
-    color: white;
-    display: flex;
+body {
+  background-color: black;
+  color: white;
+  display: flex;
 }
 #logoimg,
 #searchimg,
@@ -19,22 +19,24 @@ body{
 #playlistimg,
 #plusimg,
 #leftimg,
-#rightimg {
+#rightimg,
+#worldimg {
   filter: invert(1);
 }
 
 #left {
   width: 353px;
-  height: 100%;
   padding: 8px;
 }
-#right{
-    width: 1143px;
-    height: 40vw;
-    padding: 8px;
-    background-color: #121212;
-    border-radius: 7px;
-    margin-top: 8px;
+#right {
+  position: fixed;
+  left: 367px;
+  width: 74.5%;
+  height: 623px;
+  padding: 8px;
+  background-color: #121212;
+  border-radius: 7px;
+  margin-top: 8px;
 }
 
 #box1 {
@@ -86,10 +88,14 @@ body{
   left: 25px;
   top: 60px;
 }
+#homa, #seara, #prita{
+  color: white;
+  text-decoration: none;
+}
 
 #box2 {
   margin-top: 7px;
-  height: 530px;
+  height: 476px;
   width: 353px;
   background-color: #121212;
   color: white;
@@ -121,17 +127,16 @@ body{
   width: 353px;
   font-size: 10px;
   font-family: myfont;
-  position: relative;
-  left: 20px;
-  top: 18px;
   color: grey;
   text-decoration: none;
+}
+#lincs{
+  margin-left: 25px;
+  margin-top: 300px;
 }
 #hasallinks {
   display: flex;
   gap: 20px;
-  position: relative;
-  top: 350px;
 }
 #ads {
   position: relative;
@@ -143,37 +148,164 @@ body{
   right: 307px;
   top: 25px;
 }
+
+#wbtn{
+  width: 95.45px;
+  height: 32px;
+  background-color: #121212;
+  color: white;
+  border: 1px solid white;
+  border-radius: 25px;
+  margin-top: 65px;
+  margin-left: 25px;
+  font-family: myfont;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+#worldimg{
+  height: 16px;
+  width: 16px;
+}
+#box1r {
+  display: flex;
+  position: fixed;
+  width: 1125px;
+  height: 64px;
+}
 #btn{
-    position: relative;
-    left: 10px;
-    top: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 #leftimg,
 #rightimg {
-    height: 16px;
-    width: 16px;
+  height: 16px;
+  width: 16px;
 }
-#rightbtn{
-    height: 32px;
-    width: 32px;
-    background-color: black;
-    border: 1px solid black;
-    border-radius: 50%;
-    position: relative;
-    left: 40px;
-    bottom: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#rightbtn {
+  height: 32px;
+  width: 32px;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: relative;
+  left: 40px;
+  bottom: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#leftbtn{
-    height: 32px;
-    width: 32px;
-    background-color: black;
-    border: 1px solid black;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#leftbtn {
+  height: 32px;
+  width: 32px;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#btn2{
+  display: flex;
+  position: relative;
+  left: 865px;
+  gap: 16px;
+}
+#libtn {
+  height: 48px;
+  width: 109.36px;
+  font-family: myfont;
+  font-size: 16px;
+  background-color: white;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#subtn {
+  height: 48px;
+  width: 95.91px;
+  font-family: myfont;
+  font-size: 16px;
+  background-color: #121212;
+  border: 2px solid #121212;
+  color: #a7a7a7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#box2r{
+  position: relative;
+  top: 55px;
+  height: 571px;
+  right: 8px;
+  width: 101.3%;
+  background-image: linear-gradient(#1e1e1e, #121212 60%);
+}
+#popart{
+  display: flex;
+  position: relative;
+  left: 12px;
+  top: 35px;
+  font-family: myfont;
+  gap: 900px;
+}
+#pop1{
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+#pop2{
+  font-size: 14px;
+  color: #a7a7a7;
+  text-decoration: none;
+  margin-top: 9px;
+}
+#artist{
+  position: relative;
+  top: 50px;
+}
+#pritam{
+  width: 170px;
+  height: 233px;
+  font-family: myfont;
+  font-size: 16px;
+  position: relative;
+  left: 5px;
+  display: grid;
+  place-items: center;
+}
+
+.artistpara{
+  position: relative;
+  right: 50px;
+  bottom: 20px;
+  font-size: 12px;
+  color: #a7a7a7;
+}
+#pritamimg{
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+}
+#prita{
+  position: relative;
+  right: 40px;
+  bottom: 10px;
+}
+#priplay{
+  position: absolute;
+  bottom: 65px;
+  right: 20px;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+#pritam:hover{
+  background-color: #3b3b3b;
+  #priplay{
+    opacity: 1;
+    bottom: 75px;
+  }
 }
