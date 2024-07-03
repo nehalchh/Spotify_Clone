@@ -12,6 +12,7 @@ body {
   background-color: black;
   color: white;
   display: flex;
+  overflow-x: hidden;
 }
 #logoimg,
 #searchimg,
@@ -125,6 +126,11 @@ body {
   position: relative;
   left: 20px;
   top: 18px;
+}
+#toplay{
+  position: relative;
+  left: 40px;
+  top: 30px;
 }
 #lincs a {
   width: 353px;
