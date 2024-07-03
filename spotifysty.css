@@ -29,6 +29,9 @@ body {
   padding: 8px;
 }
 #right {
+  max-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
   position: fixed;
   left: 367px;
   width: 74.5%;
@@ -88,7 +91,7 @@ body {
   left: 25px;
   top: 60px;
 }
-#homa, #seara, #prita{
+#homa, #seara, #prita, #arijita, #ara, #anirudha, #sja, #vma, #ata{
   color: white;
   text-decoration: none;
 }
@@ -264,11 +267,12 @@ body {
   margin-top: 9px;
 }
 #artist{
+  display: flex;
   position: relative;
   top: 50px;
 }
-#pritam{
-  width: 170px;
+#pritam, #arijitsingh, #arrahman, #anirudh, #sachinjigar, #vishal, #atif{
+  width: 162px;
   height: 233px;
   font-family: myfont;
   font-size: 16px;
@@ -285,14 +289,24 @@ body {
   font-size: 12px;
   color: #a7a7a7;
 }
-#pritamimg{
+#pritamimg, #arijitimg, #arimg, #anirudhimg, #sjimg, #vmimg, #atimg{
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  height: 140px;
+  width: 140px;
 }
 #prita{
   position: relative;
   right: 40px;
+  bottom: 10px;
+}
+#arijita{
+  position: relative;
+  right: 24px;
+  bottom: 10px;
+}
+#ara, #anirudha, #sja, #vma, #ata{
+  position: relative;
+  right: 19px;
   bottom: 10px;
 }
 #priplay{
@@ -302,11 +316,170 @@ body {
   opacity: 0;
   transition: all 0.3s ease-out;
 }
-#pritam:hover{
+#pritam:hover, #arijitsingh:hover, #arrahman:hover, #anirudh:hover, #sachinjigar:hover, #vishal:hover, #atif:hover{
   background-image: linear-gradient(#1e1e1e, #191919);
   border-radius: 7px;
   #priplay{
     opacity: 1;
     bottom: 75px;
   }
+}
+
+::-webkit-scrollbar {
+  width: 12px; 
+  height: 12px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #2e2e2e; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555; 
+  border-radius: 6px; 
+  border: 3px solid #2e2e2e; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #aaa; 
+}
+
+* {
+  scrollbar-width: thin; 
+  scrollbar-color: #555 #2e2e2e; 
+}
+
+.container {
+  width: 48px; /* New size */
+  height: 48px; /* New size */
+  position: relative;
+  border-radius: 50%;
+}
+
+.play-btn {
+  position: absolute;
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(#00ff00, #00ff00); /* Color set to #00ff00 */
+  cursor: pointer;
+  outline: none;
+}
+
+.play-btn::before {
+  content: "";
+  position: absolute;
+  width: 93%;
+  height: 93%;
+  background-color: #000;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.play-btn:checked {
+  animation: borderAnimate 700ms ease-in-out 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes borderAnimate {
+  0% {
+    transform: rotate(0);
+    background: conic-gradient(#00ff00, transparent 20%); /* Color set to #00ff00 */
+  }
+
+  80% {
+    background: conic-gradient(#00ff00, transparent 90%); /* Color set to #00ff00 */
+  }
+
+  100% {
+    transform: rotate(360deg);
+    background: conic-gradient(#00ff00, #00ff00); /* Color set to #00ff00 */
+  }
+}
+
+.play-icon {
+  position: absolute;
+  width: 16px; /* Adjusted for new size */
+  height: 16px; /* Adjusted for new size */
+  left: 60%;
+  top: 50%;
+  background-color: #00ff00; /* Color set to #00ff00 */
+  transform: translate(-60%, -50%) rotate(90deg);
+  clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
+  transition: all 400ms ease-in-out;
+  cursor: pointer;
+}
+
+.play-btn:checked + .play-icon {
+  clip-path: polygon(0 100%, 0% 100%, 100% 100%);
+}
+
+.pause-icon {
+  position: absolute;
+  width: 16px; /* Adjusted for new size */
+  height: 16px; /* Adjusted for new size */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.pause-icon::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: #00ff00; /* Color set to #00ff00 */
+  left: 0;
+}
+
+.pause-icon::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: #00ff00; /* Color set to #00ff00 */
+  right: 0;
+}
+
+.play-btn:checked ~ .pause-icon::before {
+  animation: reveal 300ms ease-in-out 350ms 1;
+  animation-fill-mode: forwards;
+}
+
+.play-btn:checked ~ .pause-icon::after {
+  animation: reveal 300ms ease-in-out 600ms 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes reveal {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 35%;
+  }
+}
+
+#footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  position: absolute;
+  background-color: rgb(22, 22, 22);
+  height: fit-content;
+  height: 67px;
+  width: 1450px;
+  bottom: 8px;
+  left: 40px;
+  gap: 40px;
 }
