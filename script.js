@@ -8,7 +8,7 @@ async function getsongs(){
     for(let index= 0; index< as.length; index++){
         const element= as[index];
         if(element.href.endsWith(".mp3")){
-            songs.push(element.href)
+            songs.push(element.href.split(/songsSpotify/)[1])
         }
     }
     return songs
@@ -19,9 +19,9 @@ async function main(){
 
     let songUL= document.querySelector("#toplay").getElementsByTagName("ul")[0];
     for (const song of songs) {
-        songUL.innerHTML= songUL.innerHTML + song
-        
+        songUL.innerHTML= songUL.innerHTML + `<li> ${song.replaceAll("Y2meta.app, %20", " ")}`;
     }
+
 
     var audio= new Audio(songs[0]);
     audio.play();
