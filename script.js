@@ -21,9 +21,8 @@ async function getsongs() {
           " (Official Video) ft. Pharrell Williams, Katy Perry, Big Sean",
           ""
         )
-        .replaceAll(
-            "_", "-"
-        );
+        .replaceAll("_", "-")
+        .replace("(Official Video)", "");
       songs.push(song);
     }
   }
@@ -36,17 +35,18 @@ async function main() {
 
   let songUL = document.querySelector("#toplay").getElementsByTagName("ul")[0];
   for (const song of songs) {
-    songUL.innerHTML += `<li><div id="burder">
+    songUL.innerHTML += `<li>
+                        <div id="burder">
                             <img id="play1img" src="play1.svg" alt="play btn">
-                        <div id="boree">
-                            <div id="sona">
-                            ${song}
+                            <div id="boree">
+                                <div id="sona">
+                                    ${song}
+                                </div>
+                                <div id="soar">
+                                    Neymar
+                                </div>
                             </div>
-                            <div id="soar">
-                                Neymar
-                            </div>
-                        </div>
-                        <img id="ppplay" src="play.svg" alt="playbtn">
+                            <img id="ppplay" src="play.svg" alt="playbtn">
                         </div>
     </li>`;
   }

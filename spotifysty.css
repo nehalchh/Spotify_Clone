@@ -13,6 +13,7 @@ body {
   color: white;
   display: flex;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 #logoimg,
 #searchimg,
@@ -93,7 +94,15 @@ body {
   left: 25px;
   top: 60px;
 }
-#homa, #seara, #prita, #arijita, #ara, #anirudha, #sja, #vma, #ata{
+#homa,
+#seara,
+#prita,
+#arijita,
+#ara,
+#anirudha,
+#sja,
+#vma,
+#ata {
   color: white;
   text-decoration: none;
 }
@@ -128,7 +137,7 @@ body {
   left: 20px;
   top: 18px;
 }
-#toplay{
+#toplay {
   position: relative;
   left: 40px;
   top: 30px;
@@ -140,7 +149,7 @@ body {
   color: grey;
   text-decoration: none;
 }
-#lincs{
+#lincs {
   margin-left: 25px;
   margin-top: 75px;
 }
@@ -159,7 +168,7 @@ body {
   top: 25px;
 }
 
-#wbtn{
+#wbtn {
   width: 95.45px;
   height: 32px;
   background-color: #121212;
@@ -174,7 +183,7 @@ body {
   align-items: center;
   gap: 7px;
 }
-#worldimg{
+#worldimg {
   height: 16px;
   width: 16px;
 }
@@ -184,7 +193,7 @@ body {
   width: 1125px;
   height: 64px;
 }
-#btn{
+#btn {
   margin-top: 10px;
   margin-left: 10px;
 }
@@ -217,7 +226,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-#btn2{
+#btn2 {
   display: flex;
   position: relative;
   left: 865px;
@@ -246,7 +255,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-#box2r{
+#box2r {
   position: relative;
   top: 55px;
   height: 571px;
@@ -254,7 +263,7 @@ body {
   width: 101.3%;
   background-image: linear-gradient(#1e1e1e, #121212 60%);
 }
-#popart{
+#popart {
   display: flex;
   position: relative;
   left: 12px;
@@ -262,23 +271,29 @@ body {
   font-family: myfont;
   gap: 900px;
 }
-#pop1{
+#pop1 {
   font-size: 24px;
   color: white;
   text-decoration: none;
 }
-#pop2{
+#pop2 {
   font-size: 14px;
   color: #a7a7a7;
   text-decoration: none;
   margin-top: 9px;
 }
-#artist{
+#artist {
   display: flex;
   position: relative;
   top: 50px;
 }
-#pritam, #arijitsingh, #arrahman, #anirudh, #sachinjigar, #vishal, #atif{
+#pritam,
+#arijitsingh,
+#arrahman,
+#anirudh,
+#sachinjigar,
+#vishal,
+#atif {
   width: 162px;
   height: 233px;
   font-family: myfont;
@@ -289,75 +304,91 @@ body {
   place-items: center;
 }
 
-.artistpara{
+.artistpara {
   position: relative;
   right: 50px;
   bottom: 20px;
   font-size: 12px;
   color: #a7a7a7;
 }
-#pritamimg, #arijitimg, #arimg, #anirudhimg, #sjimg, #vmimg, #atimg{
+#pritamimg,
+#arijitimg,
+#arimg,
+#anirudhimg,
+#sjimg,
+#vmimg,
+#atimg {
   border-radius: 50%;
   height: 140px;
   width: 140px;
 }
-#prita{
+#prita {
   position: relative;
   right: 40px;
   bottom: 10px;
 }
-#arijita{
+#arijita {
   position: relative;
   right: 24px;
   bottom: 10px;
 }
-#ara, #anirudha, #sja, #vma, #ata{
+#ara,
+#anirudha,
+#sja,
+#vma,
+#ata {
   position: relative;
   right: 19px;
   bottom: 10px;
 }
-#priplay{
+#priplay {
   position: absolute;
   bottom: 65px;
   right: 20px;
   opacity: 0;
   transition: all 0.3s ease-out;
 }
-#pritam:hover, #arijitsingh:hover, #arrahman:hover, #anirudh:hover, #sachinjigar:hover, #vishal:hover, #atif:hover{
+#pritam:hover,
+#arijitsingh:hover,
+#arrahman:hover,
+#anirudh:hover,
+#sachinjigar:hover,
+#vishal:hover,
+#atif:hover {
   background-image: linear-gradient(#1e1e1e, #191919);
   border-radius: 7px;
-  #priplay{
+  #priplay {
     opacity: 1;
     bottom: 75px;
   }
 }
 
 ::-webkit-scrollbar {
-  width: 12px; 
-  height: 12px; 
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #2e2e2e; 
+  background: #2e2e2e;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #555; 
-  border-radius: 6px; 
-  border: 3px solid #2e2e2e; 
+  background: #555;
+  border-radius: 6px;
+  border: 3px solid #2e2e2e;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #888; 
+  background: #888;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: #aaa; 
+  background: #aaa;
 }
 
 * {
-  scrollbar-width: thin; 
-  scrollbar-color: #555 #2e2e2e; 
+  scrollbar-width: thin;
+  scrollbar-color: #555 #2e2e2e;
 }
 
 .container {
@@ -398,11 +429,17 @@ body {
 @keyframes borderAnimate {
   0% {
     transform: rotate(0);
-    background: conic-gradient(#00ff00, transparent 20%); /* Color set to #00ff00 */
+    background: conic-gradient(
+      #00ff00,
+      transparent 20%
+    ); /* Color set to #00ff00 */
   }
 
   80% {
-    background: conic-gradient(#00ff00, transparent 90%); /* Color set to #00ff00 */
+    background: conic-gradient(
+      #00ff00,
+      transparent 90%
+    ); /* Color set to #00ff00 */
   }
 
   100% {
@@ -476,12 +513,12 @@ body {
   }
 }
 
-#footer{
+#footer {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 40px;
-  position: absolute;
+  position: fixed;
   background-color: rgb(22, 22, 22);
   height: fit-content;
   height: 67px;
@@ -491,31 +528,34 @@ body {
   gap: 40px;
 }
 
-#toplay{
-  width: 290px;
+#toplay {
+  height: 300px;
+  width: 327px;
   position: relative;
   top: 40px;
-  left: 25px;
+  left: 14px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-#play1img{
+#play1img {
   height: 35px;
   width: 35px;
   position: relative;
-  top: 34px;
+  top: 20px;
   left: 12px;
 }
-#li11{
+#li11 {
   height: 100px;
   width: 290px;
   font-family: myfont;
   font-size: medium;
   gap: 10px;
 }
-#ul11{
+#ul11 {
   width: 290px;
 }
 #toplay ul li {
-  margin-bottom: 14px;
+  margin-top: 10px;
   font-size: small;
 }
 #toplay ul {
@@ -524,34 +564,34 @@ body {
   font-family: myfont;
   font-size: medium;
 }
-#sona{
+#sona {
   position: relative;
   bottom: -3px;
   left: 24px;
   font-size: small;
 }
-#soar{
+#soar {
   position: relative;
   right: -24px;
   top: 3px;
   font-size: small;
-}#ppplay{
+}
+#ppplay {
   position: relative;
-  bottom: 59px;
-  left: 232px;
+  bottom: 87px;
+  left: 237px;
 }
 
-#boree{
-  border: 2.5px solid white;
-  border-radius: 25px;
-  width: 120px;
-  height: 37px;
+#boree {
+  width: 158px;
+  height: 56px;
   position: relative;
-  top: -10px;
-  left: 56px;
-}#burder{
+  top: -30px;
+  left: 40px;
+}
+#burder {
   border: 3px solid white;
-  height: 100px;
+  height: 70px;
   border-radius: 64px;
   width: 300px;
   position: relative;
