@@ -29,7 +29,15 @@ async function getsongs() {
   return songs;
 }
 
+const playmusic = (track) => {
+  let audio = new Audio("/songsSpotify/"+track)
+  audio.play(); 
+}
+
 async function main() {
+
+  let currentsong;
+
   let songs = await getsongs();
   console.log(songs);
 
@@ -51,11 +59,14 @@ async function main() {
     </li>`;
   }
 
-  var audio = new Audio(songs[0]);
-  audio.play();
-  audio.addEventListener("loadeddata", () => {
-    console.log(audio.duration, audio.currentSrc, audio.currentTime);
-  });
+  Array.from(document.querySelector("#toplay").getElementsByTagName("li")).forEach(e => {
+    e.addEventListener("click", element => {
+      console.log(e.querySelector("#boree").firstElementChild.innerHTML)
+      playmusic(e.querySelector("#boree").firstElementChild.innerHTML.trim())
+    })
+})
+
+return songs;
 }
 
 main();
