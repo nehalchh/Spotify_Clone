@@ -11,18 +11,8 @@ async function getsongs() {
       let song = decodeURIComponent(element.href.split(/songsSpotify/)[1]);
       // Remove the prefix and suffix
       song = song
-        .replace("/Y2meta.app - ", "")
-        .replace(" (128 kbps).mp3", "")
-        .replace(
-          "Shah Rukh Khan & Mahira Khan _ Arijit Singh & Harshdeep Kaur _ JAM8 _",
-          ""
-        )
-        .replace(
-          " (Official Video) ft. Pharrell Williams, Katy Perry, Big Sean",
-          ""
-        )
-        .replaceAll("_", "-")
-        .replace("(Official Video)", "");
+      .replaceAll("/", "")
+      
       songs.push(song);
     }
   }
@@ -30,7 +20,7 @@ async function getsongs() {
 }
 
 const playmusic = (track) => {
-  let audio = new Audio("/songsSpotify/"+track)
+  let audio = new Audio("/songsSpotify/" + track)
   audio.play(); 
 }
 
