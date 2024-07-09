@@ -528,15 +528,16 @@ body {
   gap: 40px;
 }
 #prev{
-  position: relative;
-  left: 182px;
+  position: fixed;
+  left: 680px;
 }
 .container{
-  left: 182px;
+  position: fixed;
+  left: 775px;
 }
 #nexx{
-  position: relative;
-  left: 182px;
+  position: fixed;
+  left: 875px;
 }
 
 #toplay {
@@ -611,8 +612,8 @@ body {
 #seekbar{
   width: 300px;
   height: 5px;
-  position: relative;
-  left: 350px;
+  position: fixed;
+  left: 1100px;
   background-color: #00ff00;
 }
 #circleimg{
@@ -620,4 +621,12 @@ body {
     left: -5px;
     bottom: 10px;
     transition: left 0.5s;
+}
+#songinfo{
+  position: fixed;
+  left: 120px;
+}
+#songtime{
+  position: fixed;
+  left: 200px;
 }

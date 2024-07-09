@@ -1,3 +1,20 @@
+let currentsong= new Audio();
+
+function secondsToMinutesSeconds(seconds) {
+  if (isNaN(seconds) || seconds < 0) {
+      return "00:00";
+  }
+
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds % 60);
+
+  const formattedMinutes = String(minutes).padStart(2, '0');
+  const formattedSeconds = String(remainingSeconds).padStart(2, '0');
+
+  return `${formattedMinutes}:${formattedSeconds}`;
+}
+
+
 async function getsongs() {
   let a = await fetch("http://127.0.0.1:5500/songsSpotify/");
   let response = await a.text();
@@ -19,16 +36,24 @@ async function getsongs() {
   return songs;
 }
 
-const playmusic = (track) => {
-  let audio = new Audio("/songsSpotify/" + track)
-  audio.play(); 
+const playmusic = (track, pause= false) => {
+  // let audio = new Audio("/songsSpotify/" + track)
+  currentsong.src= "/songsSpotify/" + track 
+  if(!pause){
+    currentsong.play()
+  }
+
+  currentsong.play(); 
+  document.querySelector("#songinfo").innerHTML= decodeURI(track)
+  document.querySelector("#songtime").innerHTML= "00:00 / 00:00"
 }
 
 async function main() {
 
-  let currentsong;
+
 
   let songs = await getsongs();
+  playmusic(songs[0], true)
   console.log(songs);
 
   let songUL = document.querySelector("#toplay").getElementsByTagName("ul")[0];
@@ -54,6 +79,24 @@ async function main() {
       console.log(e.querySelector("#boree").firstElementChild.innerHTML)
       playmusic(e.querySelector("#boree").firstElementChild.innerHTML.trim())
     })
+})
+
+//attach an event listener to add prev and next
+middlebutton= document.querySelector("#middlebutton")
+middlebutton.addEventListener("click", () =>{
+  if(currentsong.paused){
+    currentsong.play()
+  }
+  else{
+    currentsong.pause()
+  }
+})
+
+currentsong.addEventListener("timeupdate", () => {
+  console.log(currentsong.currentTime, currentsong.duration)
+  document.querySelector("#songtime").innerHTML= `${
+    secondsToMinutesSeconds(currentsong.currentTime)
+  }:/${secondsToMinutesSeconds(currentsong.duration)}`
 })
 
 return songs;
