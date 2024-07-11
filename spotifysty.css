@@ -615,6 +615,11 @@ body {
   position: fixed;
   left: 1100px;
   background-color: #00ff00;
+  cursor: pointer;
+}
+#circle{
+  position: relative;
+  left: 0px;
 }
 #circleimg{
   position: relative;
@@ -625,8 +630,10 @@ body {
 #songinfo{
   position: fixed;
   left: 120px;
+  bottom: 40px;
 }
 #songtime{
   position: fixed;
-  left: 200px;
+  left: 120px;
+  bottom: 20px;
 }
