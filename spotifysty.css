@@ -530,6 +530,7 @@ body {
 #prev{
   position: fixed;
   left: 680px;
+  cursor: pointer;
 }
 .container{
   position: fixed;
@@ -538,6 +539,7 @@ body {
 #nexx{
   position: fixed;
   left: 875px;
+  cursor: pointer;
 }
 
 #toplay {
@@ -636,4 +638,13 @@ body {
   position: fixed;
   left: 120px;
   bottom: 20px;
+}
+#volume{
+  position: fixed;
+  left: 70px;
+  bottom: 20px;
+}
+#volimg{
+  height: 30px;
+  width: 30px;
 }

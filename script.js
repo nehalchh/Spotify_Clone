@@ -92,6 +92,15 @@ middlebutton.addEventListener("click", () =>{
     currentsong.pause()
   }
 })
+pauseicon= document.querySelector(".pause-icon")
+pauseicon.addEventListener("click", () =>{
+  if(currentsong.paused){
+    currentsong.play()
+  }
+  else{
+    currentsong.pause()
+  }
+})
 
 currentsong.addEventListener("timeupdate", () => {
   console.log(currentsong.currentTime, currentsong.duration)
@@ -108,23 +117,7 @@ document.querySelector("#seekbar").addEventListener("click", e=>{
   currentsong.currentTime= ((currentsong.duration)* percent)/100
 })
 
-const prev= document.querySelector("#prev");
-prev.addEventListener("click", () => {
-  console.log("prev clicked")
-  let index= songs.indexOf(currentsong.src)
-  if((index-1)>= 0){
-    playmusic(songs[index-1])
-  }
-})
 
-const nexx= document.querySelector("#nexx");
-nexx.addEventListener("click", () => {
-  console.log("nexx clicked")
-  let index= songs.indexOf(currentsong.src)
-  if((index+1)> length){
-    playmusic(songs[index+1])
-  }
-})
 
 
 
