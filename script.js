@@ -1,5 +1,6 @@
 let currentsong= new Audio();
 let songs;
+let currfolder;
 
 function secondsToMinutesSeconds(seconds) {
   if (isNaN(seconds) || seconds < 0) {
@@ -16,8 +17,9 @@ function secondsToMinutesSeconds(seconds) {
 }
 
 
-async function getsongs() {
-  let a = await fetch("http://127.0.0.1:5500/songsSpotify/");
+async function getsongs(folder) {
+  currfolder= folder;
+  let a = await fetch(`http://127.0.0.1:5500/${folder}/`);
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -26,38 +28,17 @@ async function getsongs() {
   for (let index = 0; index < as.length; index++) {
     const element = as[index];
     if (element.href.endsWith(".mp3")) {
-      let song = decodeURIComponent(element.href.split(/songsSpotify/)[1]);
+      let song = decodeURIComponent(element.href.split(`${folder}`)[1]);
       // Remove the prefix and suffix
       song = song
-      .replaceAll("/", "")
+      .replaceAll("/", "") 
       
       songs.push(song);
     }
   }
-  return songs;
-}
-
-const playmusic = (track, pause= false) => {
-  // let audio = new Audio("/songsSpotify/" + track)
-  currentsong.src= "/songsSpotify/" + track 
-  if(!pause){
-    currentsong.play()
-  }
-
-  currentsong.play(); 
-  document.querySelector("#songinfo").innerHTML= decodeURI(track)
-  document.querySelector("#songtime").innerHTML= "00:00 / 00:00"
-}
-
-async function main() {
-
-
-
-  songs = await getsongs();
-  playmusic(songs[0], true)
-  console.log(songs);
 
   let songUL = document.querySelector("#toplay").getElementsByTagName("ul")[0];
+  songUL.innerHTML= "";
   for (const song of songs) {
     songUL.innerHTML += `<li>
                         <div id="burder">
@@ -81,6 +62,28 @@ async function main() {
       playmusic(e.querySelector("#boree").firstElementChild.innerHTML.trim())
     })
 })
+  return songs;
+}
+
+const playmusic = (track, pause= false) => {
+  // let audio = new Audio("/songsSpotify/" + track)
+  currentsong.src= `/${currfolder}/` + track 
+  if(!pause){
+    currentsong.play()
+  }
+
+  currentsong.play(); 
+  document.querySelector("#songinfo").innerHTML= decodeURI(track)
+  document.querySelector("#songtime").innerHTML= "00:00 / 00:00"
+}
+
+
+
+
+async function main() {
+  songs = await getsongs("songsSpotify/cs");
+  playmusic(songs[0], true)
+
 
 //attach an event listener to add prev and next
 middlebutton= document.querySelector("#middlebutton")
@@ -103,7 +106,6 @@ pauseicon.addEventListener("click", () =>{
 })
 
 currentsong.addEventListener("timeupdate", () => {
-  console.log(currentsong.currentTime, currentsong.duration)
   document.querySelector("#songtime").innerHTML= `${
     secondsToMinutesSeconds(currentsong.currentTime)
   }:/${secondsToMinutesSeconds(currentsong.duration)}`
@@ -117,8 +119,46 @@ document.querySelector("#seekbar").addEventListener("click", e=>{
   currentsong.currentTime= ((currentsong.duration)* percent)/100
 })
 
+currentsong.volume= 0.5;
+document.querySelector(".slider").getElementsByTagName("input")[0].addEventListener("change", (e)=>{
+  currentsong.volume= parseInt(e.target.value)/100;
+})
 
-
+Array.from(document.getElementsByClassName("english")).forEach(e=>{
+  e.addEventListener("click", async item=>{
+    songs= await getsongs(`songsSpotify/${item.currentTarget.dataset.folder}`)
+  })
+})
+Array.from(document.getElementsByClassName("hinglish")).forEach(e=>{
+  e.addEventListener("click", async item=>{
+    songs= await getsongs(`songsSpotify/${item.currentTarget.dataset.folder}`)
+  })
+})
+Array.from(document.getElementsByClassName("added")).forEach(e=>{
+  e.addEventListener("click", async item=>{
+    songs= await getsongs(`songsSpotify/${item.currentTarget.dataset.folder}`)
+  })
+})
+Array.from(document.getElementsByClassName("added1")).forEach(e=>{
+  e.addEventListener("click", async item=>{
+    songs= await getsongs(`songsSpotify/${item.currentTarget.dataset.folder}`)
+  })
+})
+Array.from(document.getElementsByClassName("added2")).forEach(e=>{
+  e.addEventListener("click", async item=>{
+    songs= await getsongs(`songsSpotify/${item.currentTarget.dataset.folder}`)
+  })
+})
+Array.from(document.getElementsByClassName("japa")).forEach(e=>{
+  e.addEventListener("click", async item=>{
+    songs= await getsongs(`songsSpotify/${item.currentTarget.dataset.folder}`)
+  })
+})
+Array.from(document.getElementsByClassName("hindi")).forEach(e=>{
+  e.addEventListener("click", async item=>{
+    songs= await getsongs(`songsSpotify/${item.currentTarget.dataset.folder}`)
+  })
+})
 
 
 return songs;

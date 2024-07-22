@@ -172,6 +172,64 @@
                     <img id="priplay" src="play.svg" alt="playbtn">
                 </div>
             </div>
+            
+            <div id="popalbum">
+                <a id="pop3" href="https://open.spotify.com/section/0JQ5DAnM3wGh0gz1MXnu3B">
+                    Popular albums
+                </a>
+                <a id="pop4" href="https://open.spotify.com/section/0JQ5DAnM3wGh0gz1MXnu3B">Show all</a>
+            </div>
+
+            <div id="albums">
+                <div data-folder="ncs" class="english">
+                    <img id="engimg" src="https://i.scdn.co/image/ab67616d00001e021d1cc2e40d533d7bcebf5dae" alt="vm">
+                    <a id="enga" href="https://open.spotify.com/album/45ZIondgVoMB84MQQaUo9T">English</a>
+                    <p id="engpara">English songs</p>
+                    <img id="priplay1" src="play.svg" alt="playbtn">
+                </div>
+
+                <div data-folder="cs" class="hindi">
+                    <img id="hinimg" src="https://i.scdn.co/image/ab67616d00001e02b0f9ceb59927ab76fe6269be" alt="vm">
+                    <a id="hina" href="https://open.spotify.com/album/45ZIondgVoMB84MQQaUo9T">Hindi</a>
+                    <p id="hinpara">Hindi songs</p>
+                    <img id="priplay1" src="play.svg" alt="playbtn">
+                </div>
+
+                <div data-folder="acs" class="hinglish">
+                    <img id="hingimg" src="https://i.scdn.co/image/ab67616d00001e021e63de6489803c2b39e7f8e5" alt="vm">
+                    <a id="hinga" href="https://open.spotify.com/album/45ZIondgVoMB84MQQaUo9T">Mix</a>
+                    <p id="hinpgara">Comforting songs</p>
+                    <img id="priplay1" src="play.svg" alt="playbtn">
+                </div>
+
+                <div data-folder="bcs" class="added">
+                    <img id="addimg" src="https://i.scdn.co/image/ab67616d00001e02c3be0e4563f5564640effc13" alt="vm">
+                    <a id="adda" href="https://open.spotify.com/album/45ZIondgVoMB84MQQaUo9T">Love</a>
+                    <p id="addpara">Romantic songs</p>
+                    <img id="priplay1" src="play.svg" alt="playbtn">
+                </div>
+
+                <div data-folder="dcs" class="added1">
+                    <img id="add1img" src="https://i.scdn.co/image/ab67616d00001e0254e544672baa16145d67612b" alt="vm">
+                    <a id="add1a" href="https://open.spotify.com/album/45ZIondgVoMB84MQQaUo9T">Pop</a>
+                    <p id="add1para">Imagine Dragons!</p>
+                    <img id="priplay1" src="play.svg" alt="playbtn">
+                </div>
+
+                <div data-folder="ecs" class="added2">
+                    <img id="add2img" src="https://i.scdn.co/image/ab67706f000000020408713c731caaf1f800615a" alt="vm">
+                    <a id="add2a" href="https://open.spotify.com/album/45ZIondgVoMB84MQQaUo9T">Chill</a>
+                    <p id="add2para">Feel Good Songs</p>
+                    <img id="priplay1" src="play.svg" alt="playbtn">
+                </div>
+
+                <div data-folder="ffcs" class="japa">
+                    <img id="japaimg" src="https://i.scdn.co/image/ab67706f000000025db1394baf8862336f19ac83" alt="vm">
+                    <a id="japaa" href="https://open.spotify.com/album/45ZIondgVoMB84MQQaUo9T">Asian</a>
+                    <p id="japapara">Japanese Songs</p>
+                    <img id="priplay1" src="play.svg" alt="playbtn">
+                </div>
+            </div>
         </div>
 
 
@@ -194,7 +252,7 @@
             </svg>
         </div>
 
-
+ 
         <div id="middlebutton" class="container">
             <label>
                 <input class="play-btn" type="checkbox">
@@ -217,10 +275,15 @@
         </div>
 
         <div id="volume">
-            <img id="volimg" src="vol.svg">
-            <div id="range">
-                <input type="range" name="volrange">
-            </div>
+            <label class="slider">
+                <input type="range" class="level">
+                <svg class="volume" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve">
+                    <g>
+                        <path d="M18.36 19.36a1 1 0 0 1-.705-1.71C19.167 16.148 20 14.142 20 12s-.833-4.148-2.345-5.65a1 1 0 1 1 1.41-1.419C20.958 6.812 22 9.322 22 12s-1.042 5.188-2.935 7.069a.997.997 0 0 1-.705.291z" fill="currentColor" data-original="#000000"></path>
+                        <path d="M15.53 16.53a.999.999 0 0 1-.703-1.711C15.572 14.082 16 13.054 16 12s-.428-2.082-1.173-2.819a1 1 0 1 1 1.406-1.422A6 6 0 0 1 18 12a6 6 0 0 1-1.767 4.241.996.996 0 0 1-.703.289zM12 22a1 1 0 0 1-.707-.293L6.586 17H4c-1.103 0-2-.897-2-2V9c0-1.103.897-2 2-2h2.586l4.707-4.707A.998.998 0 0 1 13 3v18a1 1 0 0 1-1 1z" fill="currentColor" data-original="#000000"></path>
+                    </g>
+                </svg>
+            </label>
         </div>
     </div>
     <script src="script.js"></script>

@@ -102,7 +102,10 @@ body {
 #anirudha,
 #sja,
 #vma,
-#ata {
+#ata,
+#enga,
+#hina,
+#hinga, #adda, #add1a, #add2a, #japaa{
   color: white;
   text-decoration: none;
 }
@@ -271,12 +274,20 @@ body {
   font-family: myfont;
   gap: 900px;
 }
-#pop1 {
+#popalbum {
+  display: flex;
+  position: relative;
+  left: 12px;
+  top: 65px;
+  font-family: myfont;
+  gap: 890px;
+}
+#pop1, #pop3 {
   font-size: 24px;
   color: white;
   text-decoration: none;
 }
-#pop2 {
+#pop2, #pop4 {
   font-size: 14px;
   color: #a7a7a7;
   text-decoration: none;
@@ -286,6 +297,9 @@ body {
   display: flex;
   position: relative;
   top: 50px;
+}
+#albums{
+  display: flex;
 }
 #pritam,
 #arijitsingh,
@@ -302,6 +316,86 @@ body {
   left: 5px;
   display: grid;
   place-items: center;
+}
+
+.english, 
+.hindi,
+.hinglish,
+.added,
+.added1,
+.added2,
+.japa{
+  width: 162px;
+  height: 233px;
+  font-family: myfont;
+  font-size: 16px;
+  position: relative;
+  left: 5px;
+  top: 70px;
+  display: grid;
+  place-items: center;
+}
+
+#engpara, #hinpara, #hinpgara, #addpara, #add1para, #add2para, #japapara{
+  position: relative;
+  right: 30px;
+  bottom: 25px;
+  font-size: 12px;
+  color: #a7a7a7;
+}
+
+#enga, #hina, #hinga, #adda, #add1a, #add2a, #japaa{
+  position: relative;
+  right: 50px;
+  bottom: 7px;
+}
+#enga{
+  left: -41px;
+}
+#hinpara{
+  right: 36px;
+}
+#hinpgara{
+  left: -13px;
+}
+#addpara{
+  right: 23px;
+}
+#add1para{
+  left: -13px;
+}
+#add2para{
+  right: 20px;
+}
+
+#engimg, #hinimg, #hingimg, #addimg, #add1img, #add2img, #japaimg{
+  height: 140px;
+  width: 140px;
+}
+
+#priplay1{
+  position: absolute;
+  bottom: 75px;
+  right: 14px;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+
+.english:hover,
+.hindi:hover,
+.hinglish:hover,
+.added:hover,
+.added1:hover, 
+.added2:hover,
+.japa:hover{
+  background-image: linear-gradient(#1e1e1e, #191919);
+  border-radius: 7px;
+  #priplay1 {
+    opacity: 1;
+    bottom: 85px;
+    right: 14px;
+  }
 }
 
 .artistpara {
@@ -641,10 +735,80 @@ body {
 }
 #volume{
   position: fixed;
-  left: 70px;
-  bottom: 20px;
+  left: 310px;
+  bottom: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 #volimg{
   height: 30px;
   width: 30px;
+}
+/* level settings 👇 */
+
+.slider {
+  /* slider */
+  --slider-width: 100%;
+  --slider-height: 6px;
+  --slider-bg: #fff;
+  --slider-border-radius: 999px;
+  /* level */
+  --level-color: #00ff00;
+  --level-transition-duration: .1s;
+  /* icon */
+  --icon-margin: 15px;
+  --icon-color: #00ff00;
+  --icon-size: 25px;
+}
+
+.slider {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.slider .volume {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: var(--icon-margin);
+  color: var(--icon-color);
+  width: var(--icon-size);
+  height: auto;
+}
+
+.slider .level {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: var(--slider-width);
+  height: var(--slider-height);
+  background: var(--slider-bg);
+  overflow: hidden;
+  border-radius: var(--slider-border-radius);
+  -webkit-transition: height var(--level-transition-duration);
+  -o-transition: height var(--level-transition-duration);
+  transition: height var(--level-transition-duration);
+  cursor: inherit;
+}
+
+.slider .level::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  -webkit-box-shadow: -200px 0 0 200px var(--level-color);
+  box-shadow: -200px 0 0 200px var(--level-color);
+}
+
+.slider:hover .level {
+  height: calc(var(--slider-height) * 2);
 }
